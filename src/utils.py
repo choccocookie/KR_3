@@ -40,7 +40,7 @@ def date(operate):
     """
     res = datetime.datetime.fromisoformat(operate["date"])
     res = res.strftime("%d.%m.%Y")
-    return res, operate["description"]
+    return res
 
 def first_line(operate):
     """
@@ -62,6 +62,8 @@ def first_line(operate):
             hide_num = f"{(num[-1])[:4]} {(num[-1])[4:6]}** **** {(num[-1])[-4:]} ->"
             num[-1] = hide_num
             return (' ').join(num)
+    else:
+        return ''
 
 
 def second_line(operate):
